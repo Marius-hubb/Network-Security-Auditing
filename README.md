@@ -5,7 +5,7 @@ This lab will demonstrate how to perform **network security auditing** using com
 
 ## **Lab Walk Through**
 
-#### Verifying DNS Security and Identifying Risks**
+#### Verifying DNS Security and Identifying Risks
 #### **Steps:**
 1. Open **Command Prompt** (`cmd`).
 2. Type `nslookup` and press **Enter**.
