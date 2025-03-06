@@ -54,16 +54,35 @@ tracert can be used to view the hops that the packets made before reaching the d
 <p align="center">
 <img src="https://i.imgur.com/IjpO2Km.png" height="50%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
+
+ #### netstat
+- netstat (short for Network Statistics) is a command-line tool used to display information about network connections, routing tables, interface statistics, and other network-related data on a computer.
+- **`netstat -e`** to displays ethernet statistics
+<p align="center">
+<img src="https://i.imgur.com/PjwW9BD.png" height="50%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 
-<p align="center">
-<br/>
-<img src="https://i.imgur.com/rHWY0PS.png" height="50%" width="50%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-<p align="center">
-<br/>
-<img src="https://i.imgur.com/4vy91SK.png" height="50%" width="50%" alt="Disk Sanitization Steps"/>
-<br />
+---
+
+#### traceroute - on Linux 
+traceroute can be used to view the hops that the packets made before reaching the destination.
+- **`traceroute certifiedhacker.com`** 
+ <p align="center">
+<img src="https://i.imgur.com/qPwxr9Y.png" height="50%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 
+ #### dig
+- dig stands for Domain Information Groper used by the network administrators for troubleshooting the network and DNS nameservers.
+- **`dig certifiedhacker.com`** to retrieve information about all the DNS name servers of the target domain
+<p align="center">
+<img src="https://i.imgur.com/ScOtNF3.png" height="50%" width="80%" alt="Disk Sanitization Steps"/>
+
+- **`dig @ns1.bluehost.com certifiedhacker.com axfr`** to retrieve zone information.<br />
+The result appears, displaying that the server is available, but that the Transfer failed., as shown in the screenshot below.
+<p align="center">
+<img src="https://i.imgur.com/aLjMkg2.png" height="50%" width="80%" alt="Disk Sanitization Steps"/>
+<p align="left">
+<br/>
+After retrieving DNS name server information an attacker can use one of the servers to test whether the target DNS allows zone transfers or not. In this case, zone transfers are not allowed for the target domain; this is why the command resulted in the message: Transfer failed. A penetration tester should attempt DNS zone transfers on different domains of the target organization.<br/>
+
+This concludes the demonstration showing how to perform network troubleshooting using various command line utilities and tools.
