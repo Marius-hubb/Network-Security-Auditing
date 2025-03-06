@@ -1,7 +1,5 @@
 <h1>Network Troubleshooting using Command Line Utilities and Tools</h1>
 
- ## [Video Demonstration (38:41)](https://drive.google.com/file/d/1ozfcxE80ODhxWV1-2v5EPMv1_uyHX-eD/view?usp=drive_link)
-
 <h2>Description</h2>
 
 This lab will demonstrate how to perform network troubleshooting using command-line utilities and tools.
