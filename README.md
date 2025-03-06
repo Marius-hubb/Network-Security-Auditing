@@ -11,7 +11,7 @@ This lab will demonstrate how to perform network troubleshooting using command-l
 nalookup is a command-line tool used to query DNS servers to obtain domain name or IP address information.
 - **`nslookup`** to enter nslookup interactive mode.
 - **`set type=a`** to configure nslookup to query for the IP address of a given domain.
-- Type the target domain www.certifiedhacker.com . This resolves the IP address and displays the result, as shown in the screenshot below.
+- Type the target domain **`www.certifiedhacker.com`** to obtain the IP address, as shown in the screenshot below:
 
 <p align="center"> <img src="https://i.imgur.com/J9Ntu90.png" height="50%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
@@ -37,20 +37,22 @@ This returns the domain’s authoritative name server (ns1.bluehost.com), along 
 
 #### tracert 
 tracert can be used to view the hops that the packets made before reaching the destination.
-- **`tracert`** 
-- **`certifiedhacker.com`**
+- **`tracert certifiedhacker.com`** 
  <p align="center">
 <img src="https://i.imgur.com/7QhMwE8.png" height="50%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
-<br />
+
+#### arp -a
+- **`arp -a`** shows a list of IP addresses and their corresponding MAC addresses that the computer has recently communicated with.
 <p align="center">
-<br/>
-<img src="https://i.imgur.com/Kzk7SJC.png" height="50%" width="50%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/JbKAnHd.png" height="50%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
-<br />
+
+#### pathping
+- pathping utility provides detailed information about the path characteristics from a specific host to a specific destination in a single picture by combining the ping and tracert/traceroute commands.
+- **`pathping -n www.certifiedhacker.com`**
 <p align="center">
-<br/>
-<img src="https://i.imgur.com/Dc2j6gg.png" height="50%" width="50%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/IjpO2Km.png" height="50%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 
