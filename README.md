@@ -7,25 +7,33 @@
 This lab will demonstrate how to perform network troubleshooting using command-line utilities and tools.
 
 ## Lab Walk Through
+#### nslookop utility
 - **`nslookup`** to enter nslookup interactive mode.
 - **`set type=a`** to configure nslookup to query for the IP address of a given domain.
-- Analyze event logs for backup and restore activities.
+- Type the target domain www.certifiedhacker.com . This resolves the IP address and displays the result, as shown in the screenshot below.
 
+<p align="center"> <img src="https://i.imgur.com/J9Ntu90.png" height="50%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<p align="left">The first two lines in the result are as follows:<br/>
+ Server: pfSense.localdomain and Address: 10.10.1.1<br/>
+<br/>
+This specifies that the result was directed to the default server hosted on the local network (pfSense Firewall) that resolves the requested domain.<br/>
+<br/>
+Thus, if the response is coming from your local machine’s server (pfSense), but not the server that legitimately hosts the domain www.certifiedhacker.com; it is considered to be a non-authoritative answer. Here, the IP address of the target domain www.certifiedhacker.com is 162.241.216.11. Since the result returned is non-authoritative I need to obtain the domain's authoritative name server. <br/>
 
-<p align="left"> - Type nslookup to enter nslookup interactive mode.<br/>
-- Type set type=a to configure nslookup to query for the IP address of a given domain.
-<br/>
-<img src="https://i.imgur.com/hPgvwQr.png" height="50%" width="80%" alt="Disk Sanitization Steps"/>
+- **`set type=cname`** to lookup the CNAME directly against the domain's authoritative name server
+- **`certifiedhacker.com`** to specify the domain<br/>
+This returns the domain’s authoritative name server (ns1.bluehost.com), along with the mail server address (dnsadmin.box5331.bluehost.com), as shown in the screenshot below.<br/>
+
+<p align="center"><img src="https://i.imgur.com/LoH6AcF.png" height="50%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
-<p align="center">Type set type=a to configure nslookup to query for the IP address of a given domain.
-<br/>
-<img src="https://i.imgur.com/5Igc8zJ.png" height="50%" width="50%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
+
+ - Since you I obtained the authoritative name server ns1.bluehost.com I can run **`set type=a`** to obtain the IP address of the server. The IP address is displayed below as 162.159.24.80:
 <p align="center"> 
-<br/>
-<img src="https://i.imgur.com/JMLc1Ju.png" height="50%" width="50%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/isf8qig.png" height="50%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
+<p align="left"> The authoritative name server stores the records associated with the domain. Therefore, if an attacker can determine the authoritative name server (primary name server) and obtain its associated IP address, he/she might attempt to exploit the server to perform attacks such as DoS, DDoS, URL Redirection, etc.
+ 
 <br />
  <p align="center">
 <br/>
