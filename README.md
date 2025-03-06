@@ -7,7 +7,8 @@
 This lab will demonstrate how to perform network troubleshooting using command-line utilities and tools.
 
 ## Lab Walk Through
-#### nslookop utility
+#### nslookup 
+nalookup is a command-line tool used to query DNS servers to obtain domain name or IP address information.
 - **`nslookup`** to enter nslookup interactive mode.
 - **`set type=a`** to configure nslookup to query for the IP address of a given domain.
 - Type the target domain www.certifiedhacker.com . This resolves the IP address and displays the result, as shown in the screenshot below.
@@ -33,11 +34,13 @@ This returns the domain’s authoritative name server (ns1.bluehost.com), along 
 <img src="https://i.imgur.com/isf8qig.png" height="50%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <p align="left"> The authoritative name server stores the records associated with the domain. Therefore, if an attacker can determine the authoritative name server (primary name server) and obtain its associated IP address, he/she might attempt to exploit the server to perform attacks such as DoS, DDoS, URL Redirection, etc.
- 
-<br />
+
+#### tracert 
+tracert can be used to view the hops that the packets made before reaching the destination.
+- **`tracert`** 
+- **`certifiedhacker.com`**
  <p align="center">
-<br/>
-<img src="https://i.imgur.com/2TIhyIY.png" height="50%" width="50%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/7QhMwE8.png" height="50%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 <p align="center">
