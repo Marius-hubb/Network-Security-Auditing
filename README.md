@@ -29,7 +29,7 @@ This returns the domain’s authoritative name server (ns1.bluehost.com), along 
 <p align="center"><img src="https://i.imgur.com/LoH6AcF.png" height="50%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 
- - Since you I obtained the authoritative name server ns1.bluehost.com I can run **`set type=a`** to obtain the IP address of the server. The IP address is displayed below as 162.159.24.80:
+ - Since I have obtained the authoritative name server ns1.bluehost.com I can run **`set type=a`** to get the IP address of the server. The IP address is displayed below as 162.159.24.80:
 <p align="center"> 
 <img src="https://i.imgur.com/isf8qig.png" height="50%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
